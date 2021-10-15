@@ -75,13 +75,12 @@ $(document).ready(function () {
     .find("#nextButton")
     .on("click", function () {
       if (!quizOver) {
-        value = $("input[type='radio']:checked").val();
+        const value = $("input[type='radio']:checked").val();
 
         if (value === undefined) {
           $(document).find("#quizMessage").text("Please select an answer");
           $(document).find("#quizMessage").show();
         } else {
-          // TODO: Remove any message -> not sure if this is efficient to call this each time...
           $(document).find("#quizMessage").hide();
 
           if (value == questions[currentQuestion].correctAnswer) correctAnswers++;
